@@ -1,0 +1,112 @@
+// Fonts
+@font-face {
+    font-family: itangiuh;
+    src: url(../font/Itangiuh/itangiuh.otf);
+}
+@font-face {
+    font-family: unbounded;
+    src: url(../font/Unbounded/Unbounded-Regular.ttf);
+}
+
+
+// Colors
+$font: hsl(223, 31%, 80%);
+$font-hover: hsl(223, 32%, 5%);
+$button-hover: hsl(223, 31%, 60%);
+$button: hsl(223, 31%, 20%);
+$background: hsl(223, 32%, 10%);
+
+// reset
+body, header, main, figure, div, a, h1 {
+    box-sizing: border-box;
+    font-family: itangiuh, unbounded, 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: $font;
+}
+
+body {
+    background-color: $background;
+}
+
+// Links general
+a {
+    display: block;
+    text-decoration: none;
+    font-size: 1rem; // defult: 1rem = 16px, 2rem = 32px (changing on Browsersettings)
+    font-family: unbounded, 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+// Bilder general
+img, figure, header {
+    width: 100%;
+}
+
+// General Layout
+#wrapper {
+    min-height: 100vh;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 0 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+// Logo
+header h1 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 90px 30px 120px;
+    color: $font;
+    font-size: 15vw;
+}
+
+// Title
+h1 {
+    margin: 16vh 0 6vh; // vh = viewheight (-> windowheight)
+}
+
+// Buttons
+main a {
+    border-radius: 50vh;
+    width: 100%;
+    background-color: $button;
+    margin: 0 auto;
+    padding: 20px 20px;
+    transition: 0.2s;
+    margin-top: 14px;
+
+    &:hover, &:active, &:target {
+        background-color: $button-hover;
+        color: $font-hover;
+    }
+}
+
+// Footer-Icon
+#footer-icon {
+    max-width: 90px;
+    margin-top: 60px;
+}
+
+// Responsive
+@media screen and (min-width: 576px) { // > Phones / Big Phones
+    main a {
+        width: 75%;
+        font-size: 1.1rem;
+    }
+    header h1 {
+        margin: 3vh 0 6vh;
+        font-size: 5rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #wrapper {
+        justify-content: flex-start;
+    }
+}
